@@ -51,3 +51,6 @@ function sameFrequency(one, two){
         return true
     }
 }
+
+sameFrequency(182,281)
+sameFrequency(34,14)
