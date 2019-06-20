@@ -25,7 +25,7 @@ function search(arr, val) {
   return -1;
 }
 
-search([1,2,3,5,6,8,9,12,15,16,29], 15) 
+search([1,2,3,5,6,8,9,12,15,16,29], 15)
 
 
 // NAIVE APPROACH - start from left and loop through arr once to find the number or not
