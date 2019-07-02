@@ -1,3 +1,5 @@
+// Write a function called stringifyNumbers which takes in an object and finds all of the values which are numebrs and converts them to strings.
+
 function stringifyNumbers(obj) {
   let newObj = {};
   for (let key in obj) {
