@@ -16,7 +16,7 @@
     // Once we exhaust one array, push in all remaining values from the other array.
 
 
-// Merge helper function for merge sort
+// Merge helper function for merge sort with two already sorted arrays
 function merge(arr1, arr2) {
   let results = [];
   let i = 0;
