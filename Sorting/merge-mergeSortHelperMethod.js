@@ -1,4 +1,4 @@
-// Merge helper function definition:
+// Merge - Merge Sort Helper Function definition:
 // In order to implement merge sort, it's useful to first implement a function responsible for merging two sorted arrays.
 // Given two arrays which are sorted, this helper function should create a new array which is also sorted, and consists of all of the elements in the two input arrays
 // This function should run in O(n + m) time and space and should not modify the parameters passed to it.
