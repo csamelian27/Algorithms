@@ -60,7 +60,7 @@ function bubbleSort(arr) {
 // An almost sorted array is an opportune time to use bubble sort
 // Can optimize so that we check to see if we made any swaps on the previous pass; if so, continue, if not, end
 // Sets to true at the beginning and sets to false when it swaps. Checks if true at the end to break out if never switched to false.
-function bubbleSort() {
+function bubbleSort(arr) {
   let noSwaps;
   for (let i = arr.length; i > 0; i--) {
     noSwaps = true;
