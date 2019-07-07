@@ -1,8 +1,10 @@
+// Merge helper function definition:
 // In order to implement merge sort, it's useful to first implement a function responsible for merging two sorted arrays.
-// Given two arrays whcih are sorted, this helper function should create a new array which is also sorted, and consists of all of the elements in the two input arrays
+// Given two arrays which are sorted, this helper function should create a new array which is also sorted, and consists of all of the elements in the two input arrays
 // This function should run in O(n + m) time and space and should not modify the parameters passed to it.
 
-// Write a function called mergeSort that takes in two arrays.
+// Pseudocode for merge helper function:
+// Write a function called merge that takes in two arrays.
 // Create an empty array, take a look at the smallest values in each input array.
 // While there are still values we haven't looked at...
     // If the value in the first array is smaller than the value in the second array, push the value in the first array
@@ -13,7 +15,9 @@
 
     // Once we exhaust one array, push in all remaining values from the other array.
 
-function mergeSort(arr1, arr2) {
+
+// Merge helper function for merge sort
+function merge(arr1, arr2) {
   let results = [];
   let i = 0;
   let j = 0;
@@ -38,4 +42,4 @@ function mergeSort(arr1, arr2) {
   return results;
 }
 
-mergeSort([1,10,50], [2,14,99,100])
+merge([1,10,50], [2,14,99,100])
