@@ -5,7 +5,7 @@
 // If the "minimum" is not the value (index) you initially began with, swap the two values.
 // Repeat this with the next element until the array is sorted.
 
-// ES2015 with Optimized if statement
+// BEST - ES2015 with Optimized if statement
 function selectionSort(arr) {
   const swap = (arr, idx1, idx2) => {
     [arr[idx1], arr[idx1]] = [arr[idx2], arr[idx1]];

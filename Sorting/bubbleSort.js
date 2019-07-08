@@ -79,7 +79,7 @@ function bubbleSort(arr) {
 }
 
 
-// ES2015 and noSwaps implementation
+// BEST - ES2015 and noSwaps implementation
 function bubbleSort(arr) {
   let noSwaps;
 
@@ -100,3 +100,110 @@ function bubbleSort(arr) {
   }
   return arr;
 }
+
+
+// Solving from memory - Try 1
+// Messed up:
+  // swap definition forgot arr[] part
+  // remember i GREATER than 0, not less than
+  // remember i--, not i++
+  // remember j < i-1
+  // remember to pass in indexes to swap method: j & j+1, not arr[j] & arr[j+1]
+  // remember if(noSwaps) break; line - reason for noSwaps in the first place
+function bubbleSort(arr) {
+  let noSwaps;
+  const swap = (arr, idx1, idx2) => [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+  for (let i = arr.length; i > 0; i--) {
+    noSwaps = true;
+    for (let j = 0; j < i-1; j++) {
+      if (arr[j] > arr[j+1]) {
+        swap(arr, j, j+1);
+        noSwaps = false;
+      }
+    }
+    if(noSwaps) break;
+  }
+  return arr;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
