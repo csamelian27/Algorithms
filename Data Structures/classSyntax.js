@@ -7,6 +7,7 @@ class Student {
     // naming doesn't matter, just matters what we set the value to
     this.grade = year;
     this.tardies = 0;
+    this.scores = [];
   }
 
   fullName() {
@@ -27,7 +28,8 @@ class Student {
   }
 
   calculateAverage() {
-    
+    let sum = this.scores.reduce(function(a,b){return a+b;})
+    return sum/this.scores.length;
   }
 }
 
