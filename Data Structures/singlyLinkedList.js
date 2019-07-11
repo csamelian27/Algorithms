@@ -121,9 +121,12 @@ class SinglyLinkedList {
       this.head = newNode;
       this.tail = this.head;
     } else {
-      let oldHead = this.head;
+      // swap
+      // let oldHead = this.head;
+      // this.head = newNode;
+      // newNode.next = oldHead;
+      newNode.next = this.head;
       this.head = newNode;
-      this.head.next = oldHead;
     }
     this.length++;
     return this;
