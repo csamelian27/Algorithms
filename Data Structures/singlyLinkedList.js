@@ -19,13 +19,23 @@ first.next.next.next.next = new Node("you?")
 
 
 
-// Push method psuedocode:
+// Push method psuedocode: (adding to the tail)
 // This function should accept a value.
 // Create a new node using the value passed to the function
 // If there is no head property on the list, set the head and tail to be the newly created node
 // Otherwise set the next property on the tail to be the new node and set the tail property on the list to be the newly created node
 // Increment the length by one
 // Return the linked list
+
+
+// Pop method pseudocode: (removing from the tail)
+// Define a function called pop that doesn't take in any data.
+// If there's nothing in the list, no head, length is zero, return undefined
+// Otherwise loop through the entire list til you reach the tail
+// Set the next property of the 2nd to last node to be null
+// Set the tail to be the 2nd to last Node
+// Decrememnt the length of the list by 1
+// Return the value of the node removed
 
 class SinglyLinkedList {
   constructor() {
@@ -46,6 +56,28 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+
+  // one way to traverse a list
+  traverse() {
+    let current = this.head;
+    while (current) {
+      console.log(current.val);
+      current = current.next;
+    }
+  }
+
+  pop() {
+    if(!this.head) return undefined;
+    let current = this.head;
+    let newTail = current;
+    while(current.next) {
+      newTail = current;
+      current = current.next;
+    }
+    console.log(current.val, newTail.val);
+    this.tail = newTail;
+    this.tail.next = null;
+  }
 }
 
 
@@ -53,4 +85,4 @@ class SinglyLinkedList {
 let list = new SinglyLinkedList()
 list.push("HELLO")
 list.push("GOODBYE")
-list.push(99)
+list.push("!")
