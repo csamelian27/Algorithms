@@ -9,11 +9,14 @@ class Node {
 }
 
 // basic view of a linked list
-// let first = new Node("Hi")
-// first.next = new Node("there")
-// first.next.next = new Node("how")
-// first.next.next.next = new Node("are")
-// first.next.next.next.next = new Node("you?")
+let first = new Node("Hi")
+first.next = new Node("there")
+first.next.next = new Node("how")
+first.next.next.next = new Node("are")
+first.next.next.next.next = new Node("you?")
+
+
+
 
 
 // Push method psuedocode:
@@ -22,7 +25,7 @@ class Node {
 // If there is no head property on the list, set the head and tail to be the newly created node
 // Otherwise set the next property on the tail to be the new node and set the tail property on the list to be the newly created node
 // Increment the length by one
-
+// Return the linked list
 
 class SinglyLinkedList {
   constructor() {
@@ -32,19 +35,22 @@ class SinglyLinkedList {
   }
 
   push(val) {
-    if(this.length = 0) {
-      this.head = val;
-      this.tail = val;
+    let newNode = new Node(val);
+    if(!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
     } else {
-      this.tail.next = val;
-      this.tail = val;
+      this.tail.next = newNode;
+      this.tail = newNode;
     }
-    this.length += 1;
+    this.length++;
+    return this;
   }
-
 }
+
 
 // don't initialize a linked list with any data
 let list = new SinglyLinkedList()
 list.push("HELLO")
 list.push("GOODBYE")
+list.push(99)
