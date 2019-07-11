@@ -17,8 +17,6 @@ first.next.next.next.next = new Node("you?")
 
 
 
-
-
 // Push method psuedocode: (adding to the tail)
 // This function should accept a value.
 // Create a new node using the value passed to the function
