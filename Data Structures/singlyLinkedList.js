@@ -32,7 +32,7 @@ first.next.next.next.next = new Node("you?")
 // Otherwise loop through the entire list til you reach the tail
 // Set the next property of the 2nd to last node to be null
 // Set the tail to be the 2nd to last Node
-// Decrememnt the length of the list by 1
+// Decrement the length of the list by 1
 // Return the value of the node removed
 
 
