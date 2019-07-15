@@ -51,7 +51,7 @@ class Queue {
     }
     this.first = this.first.next;
     this.size--;
-    return oldFirst;
+    return oldFirst.val;
   }
 
 }
