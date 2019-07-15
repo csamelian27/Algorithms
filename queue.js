@@ -1,6 +1,6 @@
 // Array implementation
 let q = [];
-// unshift and pop OR push and shift
+// unshift and pop OR push and shift -- FIFO
 q.unshift("FIRST")
 q.unshift("SECOND")
 q.unshift("THIRD")
@@ -24,29 +24,29 @@ class Node {
 
 class Queue {
   constructor() {
-    // head, tail, length generally reserved for a linked list, though this is a linked list, it's also a queue
     this.first = null;
     this.last = null;
     this.size = 0;
   }
 
-  push(val) {
+  // push - adds val to end
+  enqueue(val) {
     let newNode = new Node(val);
     if(!this.first) {
       this.first = newNode;
       this.last = newNode;
     } else {
-      let oldFirst = this.first;
-      this.first = newNode;
-      this.first.next = oldFirst;
+      this.last.next = newNode;
+      this.last = newNode;
     }
-    return ++this.size
+    return ++this.size;
   }
 
-  pop() {
+  // shift - removes val from beginning
+  dequeue() {
     if(!this.first) return null;
     let oldFirst = this.first;
-    if(this.length === this.last) {
+    if(this.first === this.last) {
       this.last = null;
     }
     this.first = this.first.next;
@@ -56,18 +56,16 @@ class Queue {
 
 }
 
-// Pushing Pseudocode: Since it's a singly linked list with only unidirectional flow, we push and pop from beginning for constant time, calling it push and pop cause it's a stack but adding and removing from beginning
+// Enqueue Pseudocode: Since it's a singly linked list with only unidirectional flow, we push and pop from beginning for constant time, calling it push and pop cause it's a queue but adding and removing from beginning
 // The function should accept a value
 // Create a new node with that value
-// If there are no nodes in the stack, set the first and last property to be the newly created node
-// If there is at least one node, create a variable that stores the current first property on the Stack
-// Reset the first property to be the newly created node
-// Set the next property on the node to be the previously created variable
-// Increase size of the stack by 1
+// If there are no nodes in the queue, set the first and last property to be the newly created node
+// Otherwise, set the next property on the current last to be that node, and then set the last property of the queue to be that node
+// Incremement the size of the queue and return that
 
-// Pop Pseudocode:
-// If there are no nodes in the stack, return null
-// Create a temporary variable to store the first property on the stack
+// Dequeue Pseudocode:
+// If there are no nodes in the queue, return null
+// Create a temporary variable to store the first property on the queue
 // If there is only 1 node, set the first and last property to be null
 // If there is more than one node, set the first property to be the next property on the current first
 // Decrement the size by 1
