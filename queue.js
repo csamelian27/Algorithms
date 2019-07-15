@@ -1,12 +1,19 @@
 // Array implementation
-let stack = [];
-// push and pop from the end of an array
+let q = [];
+// unshift and pop OR push and shift
+q.unshift("FIRST")
+q.unshift("SECOND")
+q.unshift("THIRD")
+q.pop()
+q.pop()
+q.pop()
+// OR
 q.push("FIRST")
 q.push("SECOND")
 q.push("THIRD")
-q.pop()
-q.pop()
-q.pop()
+q.shift()
+q.shift()
+q.shift()
 
 class Node {
   constructor(val) {
@@ -15,9 +22,9 @@ class Node {
   }
 }
 
-class Stack {
+class Queue {
   constructor() {
-    // head, tail, length generally reserved for a linked list, though this is a linked list, it's also a stack
+    // head, tail, length generally reserved for a linked list, though this is a linked list, it's also a queue
     this.first = null;
     this.last = null;
     this.size = 0;

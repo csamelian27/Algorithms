@@ -25,7 +25,7 @@ class DoublyLinkedList {
       newNode.prev = this.tail;
       this.tail = newNode;
     }
-    length++;
+    this.length++;
     return this;
   }
 
@@ -42,7 +42,7 @@ class DoublyLinkedList {
       // we want to sever all lingering connections
       oldTail.prev = null;
     }
-    length--;
+    this.length--;
     return oldTail;
   }
 
@@ -58,7 +58,7 @@ class DoublyLinkedList {
       this.head.prev = null;
       oldHead.next = null;
     }
-    length++;
+    this.length++;
     return oldHead;
   }
 
@@ -73,7 +73,7 @@ class DoublyLinkedList {
       newNode.next = this.head;
       this.head = newNode;
     }
-    length++;
+    this.length++;
     return this;
   }
 
