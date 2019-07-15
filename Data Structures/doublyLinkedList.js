@@ -16,17 +16,34 @@ class DoublyLinkedList {
   // Adding a node to the end of the Doubly Linked List
   push(val) {
     let newNode = new Node(val)
-    if(!head) {
+    if(!this.head) {
       this.head = newNode;
+      // this.tail = newNode;
       this.tail = this.head;
     } else {
-      let previous = this.tail;
-      this.tail = newNode;
       this.tail.next = newNode;
-      newNode.prev = previous;
+      newNode.prev = this.tail;
+      this.tail = newNode;
     }
     length++;
     return this;
+  }
+
+  // Removing a node from the end of the Doubly Linked List
+  pop() {
+    if(!this.tail) return undefined;
+    let oldTail = this.tail;
+    if(this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.tail = oldTail.prev;
+      this.tail.next = null;
+      // we want to sever all lingering connections
+      this.tail.prev = null;
+    }
+    length--;
+    return oldTail;
   }
 
 }
@@ -48,3 +65,14 @@ class DoublyLinkedList {
 // Set the tail to be the newly created node
 // Increment the length
 // Return the Doubly Linked List
+
+// Pop Pseudocode:
+// If there is no head, no tail, or the length is 0, return undefined
+// Store the current tail in a variable to return later
+// If the length is 1, set the head and the tail to be null
+// Update the tail to be the previous Node
+// Set the newTail's next & prev to null
+// Decrement the length
+// Return the value removed
+
+// Shift Pseudocode:
