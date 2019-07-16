@@ -39,22 +39,22 @@ class BinarySearchTree {
 
   find(val) {
     if(!this.root) return false;
-    if(val === this.root) {
-      return true;
-    }
     let current = this.root;
-    if(val > current.val) {
-      if(!this.right) {
-        return false;
+    let found = false;
+    // while there's something to loop over and we haven't found our value
+    while(current && !found) {
+      if (val < current.val) {
+        current = current.left;
+      } else if(val > current.val) {
+        current = current.right;
+      } else {
+        // found = true;
+        return true;
       }
-      current = current.right;
-    } else if(val < current.val) {
-      if(!this.left) {
-        return false;
-      }
-      current = current.left;
     }
-    return true;
+    // if(!found) return false/undefined;
+    // return true/current;
+    return false;
   }
 }
 
