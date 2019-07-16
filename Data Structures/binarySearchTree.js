@@ -36,6 +36,26 @@ class BinarySearchTree {
       }
     }
   }
+
+  find(val) {
+    if(!this.root) return false;
+    if(val === this.root) {
+      return true;
+    }
+    let current = this.root;
+    if(val > current.val) {
+      if(!this.right) {
+        return false;
+      }
+      current = current.right;
+    } else if(val < current.val) {
+      if(!this.left) {
+        return false;
+      }
+      current = current.left;
+    }
+    return true;
+  }
 }
 
 // Inserting Pseudocode:
@@ -46,8 +66,23 @@ class BinarySearchTree {
   // If it is greater:
     // Check to see if there is a node to the right
       // If there is, move to that node and repeat these steps
-       // If there is not, add that node as the right property
+      // If there is not, add that node as the right property
  // If it is less:
   // Check to see if there is a node to the left
     // If there is, move to that node and repeat these steps
     // If there is not, add that node as the left property
+
+
+// Finding Pseudocode:
+// Starting at the root
+  // Check if there is a root, if not - we're done searching!
+  // If there is a root, check if the value of the new node is the value we're looking for. If we found it, we're done!
+  // If we don't find it, check to see if the value is greater than or less than the value of the root node
+    // If it is greater:
+      // Check to see if there is a node to the right
+        // If there is, move to that node and repeat these steps
+        // If there is not, we're done searching!
+    // If it is less:
+      // Check to see if there is a node to the left
+        // If there is, move to that node and repeat these steps
+        // If there is not, we're done searching!
