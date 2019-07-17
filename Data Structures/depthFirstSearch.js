@@ -2,9 +2,19 @@
 // Create a variable to store the values of nodes visited
 // Store the root of the BST in a variable called current
 // Write a helper function which accepts a node
-  // Push the value of the node to the variable that stores the values
-  // If the node has a left property, call the helper function with the left property on the node
-  // If the node has a right property, call the helper function with the right property on the node
+  // 1. Push the value of the node to the variable that stores the values
+  // 2. If the node has a left property, call the helper function with the left property on the node
+  // 3. If the node has a right property, call the helper function with the right property on the node
+// Invoke the helper function with the current variable
+// Return the array of values
+
+// DFS - PostOrder (Recursively)
+// Create a variable to store the values of nodes visited
+// Store the root of the BST in a variable called current
+// Write a helper function which accepts a node
+  // 2. If the node has a left property, call the helper function with the left property on the node
+  // 3. If the node has a right property, call the helper function with the right property on the node
+  // 1. Push the value of the node to the variable that stores the values
 // Invoke the helper function with the current variable
 // Return the array of values
 
@@ -21,25 +31,32 @@ class BinarySearchTree {
     this.root = null;
   }
 
-  depthFirstSearch() {
-    let visited = [],
-        current = this.root;
+  // PreOrder Recursively
+  depthFirstSearchPreOrder() {
+    let visited = [];
 
-    if(current.left) {
-      traverse(current);
-      visited.push(current)
-    }
-    if(current.right) {
-      traverse(current);
-      visited.push(current)
+    traverse = (node) => {
+      visited.push(node.val);
+      if(node.left) traverse(node.left);
+      if(node.right) traverse(node.right);
     }
 
+    traverse(this.root);
     return visited;
   }
 
-  traverse(node) {
-    if(node.left) traverse(node.left);
-    if(node.right) traverse(node.right);
+  // PostOrder Recursively
+  depthFirstSearchPostOrder() {
+    let visited = [];
+
+    function traverse(node) {
+      if(node.left) traverse(this.left);
+      if(node.right) traverse(this.right);
+      visited.push(node);
+    }
+
+    traverse(this.root);
+    return visited;
   }
 
 }
