@@ -13,4 +13,35 @@ class HashTable {
     }
     return total;
   }
+
+  set(key, value) {
+    let index = this._hash(key);
+    if (!this.keyMap[index]) {
+      this.keyMap[index] = [];
+    }
+    this.keyMap[index].push([key,value]);
+  }
+
+  get(key) {
+    let index = this._hash(key);
+    if(this.keyMap[index]) {
+      for (let i = 0; i < this.keyMap[index].length; i++) {
+        if(this.keyMap[index][i][0] === key) {
+          return this.keyMap[index][i];
+        }
+      }
+    }
+    return undefined;
+  }
+
 }
+
+// Set / Get Pseudocode:
+  // Set:
+    // 1. Accepts a key and a value
+    // 2. Hashes the key
+    // 3. Stores the key-value pair in the hash table array via separate chaining
+  // Get:
+    // 1. Accepts a key
+    // 2. Hashes the key
+    // 3. Retrieves the key-value pair
