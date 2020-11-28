@@ -1,0 +1,47 @@
+Iteratively vs recursively
+
+Recursion:
+Do something over and over, calling the same function on an altered list or param, until it reaches a base case.
+JSON,parse && JSON.stringify are recursive
+document.getElementById && DOM traversal algorithms - nested object traversal
+Can be cleaner than iteratively
+
+Call Stack:
+- In almost all programming languages, there is a built in data structure that manages what happens when functions are invoked.
+- Functions, when invoked, are often waiting for other functions to resolve. You need them to happen in the correct order. There's a data structure that does that. In JS - called 'stack'.
+- When a function is invoked, it's placed (pushed) on the top of the call stack
+    - Think a pile of papers. Newest goes on top. When you remove something you take from the top as well.
+- When JS sees the return keyword or when the function ends, the compiler will remove (pop)
+
+Pure recursion tips:
+-* For arrays, use methos like slice, the spread operator, and concat that make copies of arrays so you do not mutate them.
+- Strings are immutable, so you will need to use method like slice, substr, or substring to make copies of strings.
+- To make copies of objects, use object.assign or the spread operator
+
+Two Essential parts to a recursive function:
+- Base case: where the recursion stops, like a while loop
+- Different input: changes each time to evaluate a different input to get closer to the base case
+
+function takeShower() {
+    return 'Showering';
+}
+
+function eatBreakfast() {
+    let meal = cookFood();
+    return `Eating ${meal}`;
+}
+
+function cookFood() {
+    let items = ["Oatmeal", "Eggs", "Protein Shake"]
+    return items[Math.floor(Math.random() * items.length)];
+}
+
+function wakeUp() {
+    takeShower();
+    eatBreakfast;
+    console.log("Ok, ready to go to work);
+}
+
+wakeUp();
+
+call stack works such that each function gets pushed onto the top of the call stack when invoked and then resolves back in that order to finally console.log at the end.

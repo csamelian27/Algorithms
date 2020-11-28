@@ -1,0 +1,66 @@
+* What is a tree?
+ - A data structure that consists of nodes in a parent/child relationship
+ - Trees - nonlinear, they branch and you have more than one pathway through the tree
+    - Lists - linear, unidirectional
+ - A node can only point to a child, not to a parent or sibling, every node is moving away from the root node
+ - One entry point: root node
+ - Siblings: nodes with same parent
+ - Leaf: a node with no children
+ - Edge: connections to next node
+ - Hierarchical
+
+* Lots of real world tree structures:
+ - HTML DOM (Document Object Model) elements
+ - Network routing
+ - Abstract syntax trees
+ - Artificial intelligence
+ - Folders in an operating system
+ - JSON obj data
+
+* Many types of trees:
+ - Trees - can have any number of child nodes
+    - Binary Trees - each node can have at most 2 children
+        - Binary Search Trees - excel at searching sorted data
+    - Heaps
+        - Binary Heaps
+
+* Binary Search Trees - a binary tree that is also sorted
+ - Trees with at most 2 children for each parent node
+ - Kept in a sorted order to be compared
+ - If we take any node on the tree, all items less than the root are on the left, any numbers greater than the root, are on the right
+ - Every node to the left of a parent nose is always less than the parent
+ - Every node to the right of a parent nose is always greater than the parent
+ - Insert Pseudocode:
+    - Create a new node
+    - Starting at the root,
+        - Check if there is a root, if not - the root now becomes the new node
+        - If there is a root, check if the value of the new node is greater than or less than the value of the root
+        - If it is greater,
+            - Check to see if there is a node to the right
+                - If there is, move to that node and repeat these steps
+                - If there isn't, add that node as the right property
+        - If it is less,
+            - Check to see if there is a node to the left
+                - If there is , move to that node and repeat these steps
+                - If there isn't, add that node as the left property
+ - Find a Node Pseudocode:
+    - Starting at the root
+        - Check if there is a root, if not, we're done searching!
+        - If there is a root, check if the value of the new node is the value we are looking for, if we found it, we're done!
+        - If not, check to see if the value is greater than or less than the value of the root
+        - If it is greater, check to see if there is a node to the right
+            - If there is, move to that node and repeat these steps
+            - If there is not, we're done searching!
+        - If it is less,
+            - Check to see if there is a node to the left
+                - If there is, move to that node and repeate these steps
+                - If there is not, we're done searching!
+
+* Why use binary search trees:
+ - Fast and easy for searching and insertion since sorted & binary
+ - O(log n) for insertion and searching for best and average cases
+    - As the number of nodes doubles, we only increase the number of steps to find/insert by 1
+ - Worst case would be an unbalanced BST that was totally one-sided and it grows with n so it's O(n)
+
+* Balancing a binary search tree:
+ - 

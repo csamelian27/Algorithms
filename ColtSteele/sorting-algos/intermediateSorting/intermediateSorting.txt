@@ -1,0 +1,9 @@
+Much faster but more challenging! Less intuitive to write on your own, meatier, juicier, but faster.
+
+- The 3 algos we've learned so far (bubble, selection, insertion) don't scale up well as they are O(n^2)
+- The 3 new algos we'll learn (quick, merge, radix) improve time complexity to O(n log n)
+
+* Gonna implement: O(n log n) time complexity
+ - Quick sort
+ - Merge sort
+ - Radix sort

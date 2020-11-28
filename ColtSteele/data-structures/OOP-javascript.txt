@@ -1,0 +1,77 @@
+* Objectives:
+ - Explain what a class is
+ - Understand how JS implements the idea of classes
+ - Define terms like abstraction, encapsulation, and polymorphism
+ - Use ES2015 classes to implement data structures
+
+* What is a class?
+ - A blueprint for creating objects with pre-defined properties and methods
+ - JS doesn't really have classes, it is primarily syntactical sugar over JS's existing prototype-based inheritance. The class syntax does not introduce a new object-oriented inheritance model to JS.
+ - We write data structures as classes
+
+class Student {
+    constructor(firstName, lastName, year) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.grade = year;
+        this.tardies = 0;
+        this.scores = [];
+    }
+
+    fullName() {
+        return `Your full name is ${this.firstName} ${this.lastName}`;
+    }
+
+    markLate() {
+        this.tardies += 1;
+        if (this.tardies >= 3) return 'YOU ARE EXPELLED!`;
+        return `${this.firstName` ${this.ladtName} has been late ${this.tardies} times;
+    }
+
+    addScore(score) {
+        this.scores.push(score);
+        return this.scores;
+    }
+
+    calculateAverage() {
+        let sum = this.scores.reduce((a,b) => return a + b);
+        return sum/this.scores.length;
+    }
+
+    static enrollStudents() {
+        return "ENROLLING STUDENTS!";
+    }
+}
+
+let firstStudent = newStudent("Joe", "Loe", 25);
+let secondStudent = newStudent("Freya", "Loe", 1);
+firstStudent.firstName;
+firstStudent.fullName();
+
+- Instantiated with the new keyword
+- The method to create new objects must be called constructor - runs when instance is instantiated
+- The class keyword creates a constant, so you can not redefine it
+- Instance methods happen on a specific instance of a model
+- Put static before method name to make it a class method
+    - The static keyword defines a static method for a class. Static methods are called without instantiating their class and cannot be called through a class instance. Static methods are often used to create utiliity functions for an application. Like aggregrate functions.
+    - Not relevant to individual instance
+- We will rarely define static methods, mainly all instance methods
+- Inside all of our instance methods and constructor, the keyword 'this' refers to the object from that class (also known as the instance)
+
+class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    static distance(a, b) {
+        const distanceX = a.x - b.x;
+        const distanceY = a.y - b.y;
+
+        return Math.hypot(distanceX, distanceY);
+    }
+}
+
+const p1 = new Point(5, 5);
+const p2 = new Point(10, 10);
+Point.distance(p1, p2);

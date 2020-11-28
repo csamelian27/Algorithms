@@ -102,4 +102,4 @@ betterHash("hello", 13);
     - When we find a collision, we search through the array for the next empty slot
     - Store a single key/value at each index in the array
 
-Continues in hashTables-notes.js
+Continues in hashTables-notes.js in ../ColtSteele/

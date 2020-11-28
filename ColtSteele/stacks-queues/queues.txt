@@ -1,0 +1,15 @@
+* What is a queue?
+ - A data structure that you add and remove data from but the order is FIFO - first in, first out
+ - Exist everywhere:
+    - Background tasks
+    - Uploading resources
+    - Printing / task processing
+ - Foundational for larger data structures
+
+* Building a queue with an array
+ - Push onto & shift out of (or unshift and pop) - but shifting & unshifting are bad for big O
+
+* Big O Notation: (same as stacks)
+ - O(1) since we're using a Singly Linked List and pushing to end and shifting from the front
+ - Insertion & remove - O(1)
+ - Searching & access - O(n)

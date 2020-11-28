@@ -22,29 +22,12 @@
  * @return {number[]}
  */
 const intersect = function (nums1, nums2) {
-    if (nums1 == null || nums2 == null || nums1.length == 0 || nums2.length == 0) {
-        return [];
-    }
+    if (!nums1.length || !nums2.length) return null;
 
-    nums1.sort();
-    nums2.sort();
-    let i = 0;
-    let j = 0;
-    const result = [];
+    let bothArraysHave = [];
 
-    while (i < nums1.length && j < nums2.length) {
-        if (nums1[i] == nums2[j]) {
-            result.push(nums1[i]);
-            i++;
-            j++;
-        } else if (nums1[i] < nums2[j]) {
-            i++;
-        } else {
-            j++;
-        }
-    }
-
-    return result;
+    let pointerA = 0;
+    let pointerB = 0;
 };
 
 console.log

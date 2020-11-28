@@ -1,0 +1,48 @@
+Searching is faster when sorted
+
+* Linear Search:
+ - Checking one item at a time
+ - O(n) time
+ - Pseudocode:
+    - This function accepts an array and a value
+    - Loop through the array and check if the current array element is equal to the value
+    - If it is, return the index at which the element is found
+    - If the value is never found, return -1
+
+* JS linear search methods - go through each element and check if it matches the given condition:
+ - indexOf
+ - includes
+ - find
+ - findIndex
+
+const linearSearch = (nums, val) => {
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === val) return i;
+    }
+    return -1;
+};
+
+* Binary Search
+ - Much faster: O(log n) worst case, O(1) best case
+ - Rather than eliminating one element at a time, you can eliminate half of the remaining elements at a time
+ - Binary search only works on sorted arrays!
+ - Divide and conquer technique - pick a pivot point in the middle - check right and left side
+ - Pseudocode:
+    - This function accepts a sorted array and a value
+    - Create a left pointer at the start of the array, and a right pointer at the end of the array
+    - While the left pointer comes before the right pointer
+        - Create a pointer in the middle
+        - If you find the value you want, return the index
+        - If the value is too small, move the left pointer up
+        - If the value is too large, move the right pointer down
+    - If you never find the value, return -1
+
+* Naive String Search
+ - Suppose you want to count the number of times a smaller string appears in a larger string
+ - Pseudocode:
+    - Loop over the longer string
+    - Loop over the shorter string
+    - If the characters don't match, break out of the inner loop
+    - If the characters match, keep going
+    - If you complete the inner loop and find a match, increment the count of matches
+    - Return the count

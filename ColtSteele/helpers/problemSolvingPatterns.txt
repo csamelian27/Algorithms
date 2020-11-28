@@ -1,0 +1,25 @@
+- Frequency Counter
+- Multiple Pointers
+- Sliding Window
+- Divide and Conquer
+- Dynamic Programming
+- Greedy Algorithms
+- Backtracking
+- Many more!
+
+---------FREQUENCY COUNTER---------
+- This pattern uses objs or sets to collect values/frequencies of values
+- This can often avoid the need for nested loops or O(n^2) operations with arrays/strings
+- Multiple inputs that you need to compare - anagrams, similar values, etc.
+
+-----------MULTIPLE POINTERS---------
+- Have a pointer or specific location in an array and we start a second one elsewhere.
+
+---------SLIDING WINDOW----------
+- This pattern involves creating a window which can either be an array or number from one position to another.
+- Depending on a certain condition, the window either increases or closes (and a new window is created)
+- Very useful for keeping track of a subset of data in an array/string/etc.
+
+--------DIVIDE AND CONQUER------------
+- This pattern involves dividing a data set into smaller chunks and then repeating a process with a subset of data.
+- This pattern can tremendously decrease time complexity

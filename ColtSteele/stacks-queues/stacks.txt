@@ -1,0 +1,22 @@
+* What is a stack?
+ - A collection of data that abides by a LIFO structure - last in first out
+     - Like a stack of plates, add to top and remove from top
+ - The call stack is a stack
+ - Can use a linked list or array or other structures
+
+* Where stacks are used:
+ - Managing function invocations 
+ - Undo / redo
+ - Routing (the history object) is treated like a stack - the history & pages you've viewed
+ - Trees and graphs
+
+* Implementation:
+ - Stack is just a concept / set up rules - LIFO, can use any structure as long as it abides by the rules
+ - Push and pop (or unshift and shift) in tandem on an array function as a stack but have different time complexities - push & pop better for arrays cause no re-indexing occurs
+ - Better to use a singly linked list since we only need functionality for LIFO, not any extra array methods
+ - In a stack, push and pop should be constant time - in a normal SLL it wouldn't be for push since we have to loop over entire list
+ - Better to use shift and unshift but name then push and pop
+
+* Big O:
+ - Insertion & Removal - O(1)
+ - Searching & Access - O(n)

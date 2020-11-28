@@ -1,0 +1,27 @@
+* We will be reviewing a ton of data structures and defining them from scratch:
+ - Binary Search Trees
+ - Binary Heaps
+ - Queues
+ - Priority Queues
+ - Singly Linked Lists
+ - Doubly Linked Lists
+ - Undirected Unweighted Graphs
+ - Directed Graphs
+ - Hash Tables
+ - Stacks
+
+* What do they do?
+ - Data structures are collections of values, the relationship among them and the functions or operations that can be applied to the data
+
+* Why so many??
+ - Different data structures excel at different things. Some are highly specialized, while others (like arrays) are more generally used.
+
+* Why care?
+ - The more time you spend as a developer, the more likely you'll need to use one of these data structures
+ - Also, we work with them all the time already
+ - Interviews, der. Might ask:
+    - Reverse singly linked list
+    - Implement a priority queue
+    - Balance a binary tree
+
+* Using ES15 Class syntax in all of these data structures

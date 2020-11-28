@@ -1,0 +1,18 @@
+* Depth First Search - going down vertically and back up
+    - InOrder - starting at bottom and working up and across
+    - PreOrder - starting at top and go down
+    - PostOrder - bottom up
+
+- Prioritize visiting all nodes on same level before moving down or working more vertical
+
+* Breadth First Search - starting at beginning and working across the tree
+ - Visit every sibling node before we look at a child node
+ - Working horizontally
+ - Steps iteratively:
+    - Create a queue (FIFO - this can be an array) and a variable to store the values of nodes visited
+    - Place the root node in the queue
+    - Loop as long as there is anything in the queue
+        - Dequeue a node from the queue (shifting from beginning of array) and push the value of the node into the variable that stores the nodes
+        - If there is a left property on the node dequeued - add it to the queue
+        - If there is a right property on the node dequeued - add it to the queue
+    - Return the variable that stores the values
