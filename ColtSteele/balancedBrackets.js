@@ -26,7 +26,7 @@ const isBalanced = (input) => {
     return stack.length === 0;
 }
 
-console.log(isBalanced('(){}[{[)(]}]'));
+// console.log(isBalanced('(){}[{[)(]}]'));
 
 // invalid - doesn't check for balance, just matching
 const isBalanced2 = (str) => {
@@ -52,3 +52,17 @@ function isBalanced3([...str]) {
     }, 0) === 0
 }
 
+const isValid = (str) => {
+    let brackets = '(){}[]';
+    let stack = [];
+
+    for (let val of str) {
+        let bracketIndex = brackets.indexOf(val);
+        if (bracketIndex === -1) continue;
+        if (bracketIndex % 2 === 0) stack.push(bracketIndex + 1);
+        else if (stack.pop() !== bracketIndex) return false;
+    }
+    return stack.length === 0;
+};
+
+console.log(isValid('([{][}])'));

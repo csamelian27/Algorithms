@@ -1,10 +1,13 @@
+// O(1) for insertion, deletion, and access
+// Collections of key/value pairs
+
 class HashTable {
     // size is prime
     constructor(size = 17) {
         this.keyMap = new Array(size);
     }
 
-    // very simple
+    // very simple hashing algo that returns a number to function as an index
     _hash(key) {
         let total = 0;
         let WEIRD_PRIME = 31;

@@ -124,11 +124,11 @@ class SinglyLinkedList {
     reverse() {
         let currentNode = this.head;
         this.head = this.tail;
-        this.tail = node;
-        let next;
+        this.tail = currentNode;
+        let next = null;
         let prev = null;
 
-        for (let i = 0; i < this.length; i++) {
+        while (currentNode) {
             next = currentNode.next;
             currentNode.next = prev;
             prev = currentNode;
@@ -145,5 +145,4 @@ list.push("there");
 list.push("you");
 list.push("!");
 
-console.log(list.remove(1));
-console.log(list)
+console.log(list.reverse().get(3));
