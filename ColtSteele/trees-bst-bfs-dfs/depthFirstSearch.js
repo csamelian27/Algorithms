@@ -78,6 +78,20 @@ class BinarySearchTree {
         return visited;
     }
 
+    // Same as above except we push node in the middle of exploring left and right sides
+    DFSInOrder() {
+        let visited = [];
+
+        const traverse = (node) => {
+            if (node.left) traverse(node.left);
+            visited.push(node.value);
+            if (node.right) traverse(node.right);
+        }
+
+        traverse(this.root);
+        return visited;
+    }
+
     maximumDepth() {
         let leftCounter = 0;
         let rightCounter = 0;
@@ -113,4 +127,4 @@ tree.insert(2);
 tree.insert(11);
 tree.insert(13);
 tree.insert(14);
-console.log(tree.maximumDepth());
+console.log(tree.DFSInOrder());
